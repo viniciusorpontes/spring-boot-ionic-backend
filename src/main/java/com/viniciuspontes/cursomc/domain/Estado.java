@@ -18,16 +18,15 @@ public class Estado implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "estado")
+	@OneToMany(mappedBy="estado")
 	private List<Cidade> cidades = new ArrayList<>();
 	
-	public Estado() {
-		
+	public Estado() {	
 	}
 
 	public Estado(Integer id, String nome) {
@@ -52,12 +51,12 @@ public class Estado implements Serializable{
 		this.nome = nome;
 	}
 
-	public List<Cidade> getCidade() {
+	public List<Cidade> getCidades() {
 		return cidades;
 	}
 
-	public void setCidade(List<Cidade> cidade) {
-		this.cidades = cidade;
+	public void setCidades(List<Cidade> cidades) {
+		this.cidades = cidades;
 	}
 
 	@Override
