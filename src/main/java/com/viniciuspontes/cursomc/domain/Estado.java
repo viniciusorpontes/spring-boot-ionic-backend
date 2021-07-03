@@ -1,5 +1,7 @@
 package com.viniciuspontes.cursomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ public class Estado implements Serializable {
 	private String nome;
 	
 	//Um estado para muitas cidades
+	@JsonBackReference
 	@OneToMany(mappedBy = "estado")
 	private List<Cidade> cidades = new ArrayList<>();
 	
